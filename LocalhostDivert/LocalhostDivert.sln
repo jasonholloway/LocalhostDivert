@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalhostDivert", "LocalhostDivert\LocalhostDivert.csproj", "{ED8274B3-BAA0-4C0C-A803-AB342FD50B0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalhostDivert.Test", "LocalhostDivert.Test\LocalhostDivert.Test.csproj", "{FC2B8E24-FA31-4B2E-96DA-6714E703C8CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{ED8274B3-BAA0-4C0C-A803-AB342FD50B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8274B3-BAA0-4C0C-A803-AB342FD50B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8274B3-BAA0-4C0C-A803-AB342FD50B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2B8E24-FA31-4B2E-96DA-6714E703C8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2B8E24-FA31-4B2E-96DA-6714E703C8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2B8E24-FA31-4B2E-96DA-6714E703C8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2B8E24-FA31-4B2E-96DA-6714E703C8CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

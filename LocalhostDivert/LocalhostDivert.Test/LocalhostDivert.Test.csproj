@@ -4,15 +4,14 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{ED8274B3-BAA0-4C0C-A803-AB342FD50B0D}</ProjectGuid>
-        <OutputType>Exe</OutputType>
+        <ProjectGuid>{FC2B8E24-FA31-4B2E-96DA-6714E703C8CC}</ProjectGuid>
+        <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>LocalhostDivert</RootNamespace>
-        <AssemblyName>LocalhostDivert</AssemblyName>
+        <RootNamespace>LocalHostDivert.Test</RootNamespace>
+        <AssemblyName>LocalhostDivert.Test</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
-        <LangVersion>latest</LangVersion>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,16 +37,19 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+            <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Extensions.cs" />
-        <Compile Include="IpOps.cs" />
-        <Compile Include="Program.cs" />
+        <Compile Include="IpTests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-      <PackageReference Include="WinDivertSharp" Version="1.4.3.3" />
+      <ProjectReference Include="..\LocalhostDivert\LocalhostDivert.csproj">
+        <Project>{ed8274b3-baa0-4c0c-a803-ab342fd50b0d}</Project>
+        <Name>LocalhostDivert</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
