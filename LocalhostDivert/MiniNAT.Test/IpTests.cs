@@ -1,7 +1,6 @@
-﻿using LocalhostDivert;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace LocalHostDivert.Test
+namespace MiniNAT.Test
 {
     using static IpOps;
     
