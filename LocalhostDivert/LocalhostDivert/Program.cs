@@ -13,18 +13,17 @@ namespace LocalhostDivert
     {
         public static async Task Main()
         {
-            Task.Run(Run);
-            Task.Run(SnoopFromLocalHost);
+            Task.Run(DivertToLocalhost);
+            Task.Run(DivertFromLocalhost);
 
             await Task.Delay(1000 * 60 * 10);
         }
 
-        private static void Run()
+        private static void DivertToLocalhost()
         {
-            uint errorPos = 0;
-
             string filter = "ip and ifIdx == 13 and inbound and ip.DstAddr == 192.168.127.1";
 
+            uint errorPos = 0;
             if (!WinDivert.WinDivertHelperCheckFilter(filter, WinDivertLayer.Network, out string errorMsg, ref errorPos))
             {
                 throw new Exception($"{errorMsg} (at pos {errorPos} of '{filter}')");
@@ -102,7 +101,7 @@ namespace LocalhostDivert
         }
 
         
-        private static void SnoopFromLocalHost()
+        private static void DivertFromLocalhost()
         {
             uint errorPos = 0;
 
@@ -148,7 +147,7 @@ namespace LocalhostDivert
                         throw new Exception($"Read error: {Marshal.GetLastWin32Error()}");
                     }
 
-                    Console.WriteLine($"->127.9.9.9  Read packet from if:{address.IfIdx}, {JsonConvert.SerializeObject(address, Formatting.Indented)}");
+                    Console.WriteLine($"->127.2.0.1  Read packet from if:{address.IfIdx}, {JsonConvert.SerializeObject(address, Formatting.Indented)}");
                     
                     var bytesBefore = buffer.ReadBufferBytes().ToArray();
                     Console.WriteLine($"Before:\t{BitConverter.ToString(bytesBefore)}");

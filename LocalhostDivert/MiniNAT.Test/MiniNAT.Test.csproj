@@ -9,7 +9,7 @@
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
         <RootNamespace>LocalHostDivert.Test</RootNamespace>
-        <AssemblyName>LocalhostDivert.Test</AssemblyName>
+        <AssemblyName>MiniNAT.Test</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
